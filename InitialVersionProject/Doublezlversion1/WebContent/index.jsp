@@ -38,7 +38,7 @@
 				document.ThisForm.stupwd.focus();
 				return false;
 			 }
-			 document.ThisForm.submit(); 
+			 document.ThisForm.submit();   
 		}
     </script> 
     
@@ -61,7 +61,7 @@
                   </form>   
                </div>    
                <div class="nav-bar">
-                    <ul>
+                    <ul>  
                         <li><a href="index.xhtml" class="first current" >首页</a></li>
                             <li><a href="jigoushezhi.xhtml" class="one">机构设置</a></li>
                             <li><a href="compus.xhtml" class="two">学校概况</a></li>
