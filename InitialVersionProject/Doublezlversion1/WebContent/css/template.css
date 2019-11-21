@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+body {
+    font-family: 微软雅黑;
+    margin:0;
+}
+
+.containerDiv{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.topDiv, .middleDiv{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+/*顶部div和底部div的样式*/
+.topDiv{
+    height: 80px;
+    background:url(../images/1002.jpg) no-repeat center top;
+    /*background-color: #84AF9B;*/
+    color: white;
+}
+/*----------------*/
+.bottomDiv{
+    height: 20px;
+    background-color: #84AF9B;
+    color: white;
+    text-align: center;
+}
+
+/*包含内容的中间的div的样式*/
+.middleDiv{
+    height:500px;
+}
+
+/*让中间div里面的三个div向左浮动，实现并排，默认div是块元素，每个div单独占据一行，宽度占据整个行的宽度*/
+.leftDiv,.centerDiv{
+    float:left;
+    height: 500px;
+}
+
+/*三个大div中，中间的middleDiv里面的leftDiv和rightDiv*/
+.middleDiv .leftDiv{
+    background-color:  #009999;
+    width: 15%;
+}
+
+
+/*三个大div中，中间的middleDiv里面的leftDiv和rightDiv*/
+.middleDiv .centerDiv{
+    /*background-color: #99CC99;*/
+    width: 84%;
+    margin: 0 0.5%;
+}
+
+.navMenu{
+    list-style: none;
+    margin: 50px auto;
+    width: 80%;
+    padding:0;
+    line-height: 40px;
+    text-align: center;
+}
+
+.navMenu a{
+    color: white;
+    text-decoration: none;
+    transition: text-shadow 0.5s,color 0.5s, text-decoration 0.5s;
+    -moz-transition: text-shadow 0.5s,color 0.5s, text-decoration 0.5s;	 
+    -webkit-transition: text-shadow 0.5s,color 0.5s, text-decoration 0.5s;
+    -o-transition: text-shadow 0.5s,color 0.5s, text-decoration 0.5s;
+}
+
+.navMenu a:hover{
+    color: lightcyan;
+    text-decoration: underline;
+    text-shadow: 0px -3px 10px lightyellow ;
+}
+
+#navigation{
+position:absolute;
+top:0px; 
+height:24px;
+text-align:center;
+ width:1350px;
+}
+
+#navigation.nav_0_head,#navigation.nav_0_space,#navigation.nav_0_foot{display: none}
+#navigation ul{height:24px;text-align:right;width:100%;}
+#navigation ul li{display: inline; white-space:nowrap;}
+#navigation ul li a{letter-spacing:2px; color:#fff;line-height:24px;padding-right:10px;border-right:1px solid #fff;}
+#navigation ul li a span{padding-left:10px;}
+#navigation ul li a:hover{color: lightcyan;text-decoration: underline;text-shadow: 0px -3px 10px lightyellow ;}
+
+.welcome1{
+    color: #d43f3a; 
+    position:absolute;
+    top:15px; 
+    /*height:24px;*/
+    text-align:right;
+    width:1350px;
+    color: white;
+}
+.welcome{
+    color: #d43f3a; 
+    position:absolute;
+    top:20px;  
+    /*height:24px;*/
+    text-align:right;
+    width:1350px;
+    color: white;
+}
+
