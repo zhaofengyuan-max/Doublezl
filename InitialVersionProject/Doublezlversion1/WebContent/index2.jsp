@@ -55,7 +55,7 @@
                    <!--action="http://yz.tsinghua.edu.cn/easyDig/Default.jsp"-->
                    <form id="searchForm"  method="post" target="_blank" name="form1">
                     <input type="hidden" id="searchVpath" name="vpath" value="http://yz.tsinghua.edu.cn/publish/yjszs/" />
-                    <input name="Q" type="text" class="text" value="站内搜索" onFocus="if (this.value==='站内搜索'){this.value=''}" onBlur="if (this.value===''){this.value='站内搜索'};"/>
+<!--                     <input name="Q" type="text" class="text" value="站内搜索" onFocus="if (this.value==='站内搜索'){this.value=''}" onBlur="if (this.value===''){this.value='站内搜索'};"/> -->
                     <input type="submit" value="" class="sub" />
                   </form>   
                </div>    
