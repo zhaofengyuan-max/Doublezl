@@ -14,7 +14,8 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="css/template.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-        <script language="javascript">
+        
+        <script language="javascript">   
             function check()
             {
                  if(document.formPw.teaPass.value =="")

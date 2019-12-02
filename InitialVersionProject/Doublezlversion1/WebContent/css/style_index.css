@@ -15,7 +15,7 @@ body{
 	background:url(./images/002.jpg) no-repeat center top;
 	background-color:#eaf3f4;
 }
-#index_all{ background:url(../images/002.jpg) no-repeat center top; margin:auto; padding:auto; }
+#index_all{ background:url(../images/002.jpg) no-repeat center top; margin:auto; padding:auto;}
 
 /********************顶部 开始*********************/ 
 #index_all .header{ width:1220px; height:148px; padding-bottom:50px;  margin:auto; padding:auto;}

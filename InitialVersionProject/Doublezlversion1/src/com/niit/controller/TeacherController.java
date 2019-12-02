@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;   
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -57,7 +57,7 @@ public class TeacherController {
 	    String basePath = request.getScheme() + "://"
 	            + request.getServerName() + ":" + request.getServerPort()
 	            + path + "/";
-		response.sendRedirect(basePath+"index2.jsp");
+		response.sendRedirect(basePath+"index2.jsp");  
 		return null;
 //		return "index2";
 	}
@@ -128,7 +128,7 @@ public class TeacherController {
 //	}
 	
 	@RequestMapping(value="/personalInfo")
-	public String personalInfo(HttpSession session)  {
+	public String personalInfo(HttpSession session)  {   
 	    return "personalInfo";  
 	}
 	
