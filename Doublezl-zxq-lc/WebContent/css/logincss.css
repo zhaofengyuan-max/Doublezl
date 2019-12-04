@@ -1,0 +1,130 @@
+body {
+	font-size: 12px; font-family: Arial, Helvetica, sans-serif; background: #fff; color: #333;
+	padding-bottom:0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+A {
+	text-decoration: none; color: #fff
+}
+A:hover {
+	text-decoration: underline
+}
+INPUT {
+	border-left-style: none; background: #fff; border-bottom-style: none; border-right-style: none; border-left-style: none
+}
+UL {
+	list-style-type: none
+}
+H3 {
+	padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+P {
+	padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+UL {
+	padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+LI {
+	padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+FORM {
+	padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+BUTTON {
+	padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+INPUT {
+	padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+LI {
+	float: left
+}
+H3 {
+	font-size: 12px; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; padding-right: 0px
+}
+BUTTON {
+	font-size: 100%
+}
+INPUT {
+	font-size: 100%
+}
+TEXTAREA {
+	font-size: 100%
+}
+.login_windows {
+	width: 262px
+}
+.login_windows .input_infor {
+	padding-left: 0px; margin-top: 15px
+}
+.login_windows .input_infor UL LI {
+	height: 32px; width: 240px; float: right
+}
+.login_windows .input_infor A:hover {
+	text-decoration: none
+}
+.login_windows .input_infor .password {
+	height: 24px; width: 190px; margin-left: 15px; line-height: 25px; background-color: transparent
+}
+.login_windows .input_infor SPAN {
+	float: right
+}
+.login_windows {
+	overflow: hidden; height: 203px; background: url(../images/012.png) no-repeat center center
+}
+.login_windows H3 {
+	font-size: 18px; height: 50px; font-family: "微软雅黑"; background: url(../images/015.jpg) no-repeat; font-weight: normal; color: white; letter-spacing: 0.1em; line-height: 50px; text-indent: 20px
+}
+.input_infor .txt {
+	height: 27px; width: 217px; background: #e5b1ac; margin-top: 0px;float:left;
+}
+.input_infor .txt INPUT {
+	border-left-style: none; height: 27px; width: 195px; background: none transparent scroll repeat 0% 0%; border-bottom-style: none; padding-bottom: 0px; padding-top: 0px; border-right-style: none; padding-left: 10px; border-left-style: none; line-height: 27px; padding-right: 10px
+}
+.input_infor .lbt {
+	margin-top: 5px
+}
+.input_infor .lbt .btn {
+	cursor: pointer; height: 27px; width: 98px; background: url(../images/015.png) no-repeat; float: left; text-align: center; text-indent: -9999px
+}
+.help{
+	margin-top:10px;
+} 
+
+#login{   
+    position: absolute;   
+    top: 50%;   
+    left:50%;   
+    margin: -160px 0 0 -350px;   
+    width: 700px;   
+    height: 300px;   
+    background-image:url(../images/login_6.jpg); 
+}   
+#d_1{
+    position: absolute;   
+    width:400px;
+    height:200px;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin:auto;
+    background-image:url(../images/login_7.jpg);
+
+}
+#d_2{
+    text-align: center;
+    position: absolute;
+    height:30px;
+    width:700px;
+    top: 85%;   
+    left:50%;
+    margin: -100px 0 0 -350px;  
+    background-color: #bce8f1; 
+
+    
+}
+#d_3{
+  text-align: center;  
+}
+
+
