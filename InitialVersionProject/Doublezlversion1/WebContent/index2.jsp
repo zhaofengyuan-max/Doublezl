@@ -110,7 +110,9 @@
             <div class="container">
                 <div class="row">                   
                     <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-                       <form action="${pageContext.request.contextPath}/teacher/login"  method="post"  id="loginForm">        
+                       <form action="${pageContext.request.contextPath}/teacher/login"  method="post"  id="loginForm">
+                            
+                            
                             
                         <!--   if you want to have the card without animation please remove the ".card-hidden" class   -->
                             <div class="card ">

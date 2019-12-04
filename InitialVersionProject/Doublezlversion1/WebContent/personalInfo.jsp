@@ -1,117 +1,147 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://"
-            + request.getServerName() + ":" + request.getServerPort()
-            + path + "/";
-%> 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%-- 
+//     String path = request.getContextPath();
+//     String basePath = request.getScheme() + "://"
+//             + request.getServerName() + ":" + request.getServerPort()
+//             + path + "/";
+  --%>
 <html>
-    <head>
-        <title>教师个人信息</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <base href="<%=basePath%>"></base>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/template.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-        
-        <script language="javascript">   
-            function check()
-            {
-                 if(document.formPw.teaPass.value =="")
-                 {
-                     alert("新密码不能空");
-                     return ;
-                 }
-                 document.getElementById("fm").submit();
-            }
-        </script>
-    </head>
-    <body>
-        <div class="topDiv" style=" background:url(images/1002.jpg) ">
-            <div id="navigation">
-	            <div class="welcome">
-	                <c:if test="${not empty teacher}">     
-					    <br/>
-					             欢迎您：${teacher.teaName} &nbsp;&nbsp;
-					    <a href="javascript:void(0)" onclick="logout()">安全退出</a> 
-					    <br/><br/><br/>
-	 				</c:if>
-	            </div>
-            </div>
-        </div>
-        <div class="middleDiv" >
-            <div class="leftDiv" style=" background:url(images/1001.jpg)">
-               <div>
-                  <ul class="navMenu">
-                        <li><a href="personalInfo.jsp">个人信息</a></li>
-                        <li><a href="updatePass.jsp">修改密码</a></li>
-                        <li><a href="vedioAdd.jsp">教学资料</a></li>
-                        <li><a href="manageCourses.jsp">教学课程</a></li> 
-                        <li><a href="manageGrade.jsp">成绩管理</a></li> 
-                        <li><a href="messagetShow.jsp">师生交流</a></li> 
-                    </ul> 
-               </div>
-            </div>
-            <div class="centerDiv">
-                    <div class=" container">
-                        <h3 class="text-danger text-center"  style="margin-bottom: 5px">个人信息</h3>
-                        <hr/>
-                        <form action="${pageContext.request.contextPath}/teacher/updateInfo"  method="post">
-			                <table class="table table-striped table-hover dataTable">
-			                    <tr>
-			                        <td><label for="teano">账号：</label></td>
-			                        <td><input name="teaNo" type="text" id="teano" value="${teacher.teaNo}" readonly="readonly"></td>
-			                    </tr>
-			                    <tr>
-			                        <td><label for="teaname">姓名：</label></td>
-			                        <td><input name="teaName" type="text" id="teaname" value="${teacher.teaName}"  readonly="readonly"></td>
-			                    </tr>
-			                    <tr>
-			                        <td><label for="teapass">密码：</label></td>
-			                        <td><input name="teaPass" type="text" id="teapass" value="${teacher.teaPass}"></td>
-			                    </tr>
-			                    <tr>
-			                        <td><label for="gender">性别：</label></td>
-			                        <td><input name="gender" type="text" id="gender" value="${teacher.gender}" readonly="readonly"></td>
-			                    </tr>
-			                    <tr>
-			                        <td><label for="birthdate">出生年月：</label></td>
-			                        <td><input name="birthdate" type="text" id="birthdate" value="${teacher.birthdate}"  readonly="readonly"></td>
-			                    </tr>
-			                    <tr>
-			                        <td><label for="email">邮箱：</label></td>
-			                        <td><input name="email" type="text" id="email" value="${teacher.email}"></td>
-			                    </tr>  
-			                    <tr>
-			                        <td><label for="acano">所属学院：</label></td>
-			                        <td><input name="acaNo" type="text" id="acaNo" value="${teacher.acaNo}"  readonly="readonly"></td>
-			                    </tr>
-			                    <tr class="foot">
-                                    <td colspan="2">
-                                      <!--<input type="hidden" name="teaNo" value="${teacher.teaNo}"/>
-                                      <input type="hidden" name="teaName" value="${teacher.teaName}"/>
-                                      <input type="hidden" name="gender" value="${teacher.gender}"/>
-                                      <input type="hidden" name="birthdate" value="${teacher.birthdate}"/> 
-                                      <input type="hidden" name="acaNo" value="${teacher.acaNo}"/> -->
-                                      <input type="submit" value="修改">
-                                    </td>
-                                </tr>
-			                </table>
-			               </form>
-                                 
-                    <br/>
-                    <br/>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%-- <base href="<%=basePath%>"></base> --%>
+<title>学生--个人信息</title>
+</head>
+<body>
+
+<%@include  file="teachertemplate.jsp"%>
+<div style="margin-top:-570px; ">
+ 
+ <div class="main-panel" style=" margin-top:-70px">
+   <nav class="navbar navbar-default" >
+            <div class="container-fluid" >
+				<div class="navbar-minimize">
+					<button id="minimizeSidebar" class="btn btn-warning btn-fill btn-round btn-icon">
+						<i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i>
+						<i class="fa fa-navicon visible-on-sidebar-mini"></i>
+					</button>
+				</div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">教务系统</a>
                 </div>
+                
             </div>
-        </div>
-        <div class="bottomDiv">Copyright © 2018 All rights reserved. Doublezl 版权所有</div>
-    </body> 
-    <script>
-    function logout(){
-    	if(confirm("确定要退出吗?")){
-    		location.href="${pageContext.request.contextPath}/teacher/logout";
-    	}
-    }
-</script> 
+        </nav>
+        
+         <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">个人信息</h4>
+                            </div>
+                            <div class="content">
+                             
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>学工号</label>
+                                                <input class="form-control" disabled  name="teaNo" type="text" id="teano" value="${teacher.teaNo}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>姓名</label>
+                                                <input  class="form-control" disabled name="teaName" type="text" id="teaname" value="${teacher.teaName}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label >密码</label>
+                                                <input class="form-control" disabled name="teaPass" type="text" id="teapass" value="${teacher.teaPass}" >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>出生年月</label>
+                                                <input class="form-control" disabled  name="birthdate" type="text" id="birthdate" value="${teacher.birthdate}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>邮箱</label>
+                                                <input class="form-control" disabled  name="email" type="text" id="email" value="${teacher.email}">
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>学院</label>
+                                                <input class="form-control" disabled  name="acaNo" type="text" id="acaNo" value="${teacher.acaNo}" >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>性别</label>
+                                                <input class="form-control" disabled name="gender" type="text" id="gender" value="${teacher.gender}">
+                                            </div>
+                                        </div>
+                                        
+                                       
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>籍贯</label>
+                                                <input type="text" class="form-control" disabled  value="山东">
+                                            </div>
+                                        </div>
+                                    </div>
+                             </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             
+             <div class="col-md-4" style="float:right; margin-top:-440px; " >
+                        <div class="card card-user">
+                            <div class="image">
+                                <img src="images/" alt="...">
+                            </div>
+                            <div class="content">
+                                <div class="author">
+                                     <a href="#">
+                                    <img class="avatar border-gray" src="images/${teacher.gender}">
+                                      <h4 class="title">个人照片
+                                      </h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+             
+    </div>
+ 
+    
+</div>
+
+
+</body>
 </html>

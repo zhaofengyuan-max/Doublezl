@@ -36,14 +36,21 @@ public class TeacherController {
 	@RequestMapping(value="/login")   
 	public String login(@RequestParam(value="teaNo") String teaNo,
 			            @RequestParam(value="teaPass") String teaPass,
-			            HttpSession session)  {
-	 	System.out.println(teaNo+"--"+teaPass);
+			            HttpServletRequest request,HttpServletResponse response,
+			            HttpSession session) throws IOException  {
+//	 	System.out.println(teaNo+"--"+teaPass);
 	 	t1=teacherBiz1.getTeacherById(teaNo);
 	 	System.out.println(t1.getEmail()+"--------------");
+	 	String path = request.getContextPath();
+	    String basePath = request.getScheme() + "://"
+	            + request.getServerName() + ":" + request.getServerPort()
+	            + path + "/";
 	 	if(t1!=null) {
 //	 		t=t1;
 	 		session.setAttribute("teacher", t1);
-	 		return "personalInfo";
+//	 		return "../personalInfo";
+	 		response.sendRedirect(basePath+"personalInfo.jsp");
+			return null;
 //	 		return "NewFile";
 	 	}
 	 	System.out.println(t1+"-----------------");
@@ -57,7 +64,7 @@ public class TeacherController {
 	    String basePath = request.getScheme() + "://"
 	            + request.getServerName() + ":" + request.getServerPort()
 	            + path + "/";
-		response.sendRedirect(basePath+"index2.jsp");  
+		response.sendRedirect(basePath+"index2.jsp");
 		return null;
 //		return "index2";
 	}
@@ -106,7 +113,7 @@ public class TeacherController {
 	
 	
 	
-	//澧炴坊鏁版嵁鐨勬祴璇�     
+	//增添数据的测试
 //	@RequestMapping(value="/login")   
 //	public String login(@RequestParam(value="teaNo") String teaNo,
 //			            @RequestParam(value="teaName") String teaName,
@@ -128,7 +135,7 @@ public class TeacherController {
 //	}
 	
 	@RequestMapping(value="/personalInfo")
-	public String personalInfo(HttpSession session)  {   
+	public String personalInfo(HttpSession session)  {
 	    return "personalInfo";  
 	}
 	
