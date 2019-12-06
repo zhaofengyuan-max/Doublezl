@@ -45,7 +45,7 @@
 			</div>
 			</nav>
 
-			<div class="content">
+			<div class="content">   
 				<div class="contentDiv">
                     <form  action="${pageContext.request.contextPath}/vedio/saveVedio" name="formAdd"  method="post"  enctype="multipart/form-data"> 
                        <table class="table table-striped table-hover dataTable"  width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
