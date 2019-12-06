@@ -1,62 +1,54 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>   
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
+<%@page import="com.niit.entity.Teacher"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
-%> 
+%>
 <html>
-    <head>
-        <title>教学视频</title>
-        <base href="<%=basePath%>"></base>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/template.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-        <style type="text/css">
-			.c1-bline{border-bottom:#999 1px dashed;border-top:1px;}
-			.f-right{float:right}
-			.f-left{float:left}
-			.clear{clear:both}
-       </style>
-    </head>
-    <body>
-        <div class="topDiv" style=" background:url(images/1002.jpg) ">
-            <div id="navigation">
-	            <div class="welcome">
-	                <c:if test="${not empty teacher}">     
-					    <br/>
-					             欢迎您：${teacher.teaName} &nbsp;&nbsp;
-					    <a href="javascript:void(0)" onclick="logout()">安全退出</a> 
-					    <br/><br/><br/>
-	 				</c:if>
-	            </div>
-            </div>
-        </div>
-        <div class="middleDiv" >
-            <div class="leftDiv" style=" background:url(images/1001.jpg)">
-               <div>
-                   <ul class="navMenu">
-                        <li><a href="personalInfo.jsp">个人信息</a></li>
-                        <li><a href="updatePass.jsp">修改密码</a></li>
-                        <li><a href="vedioAdd.jsp">教学资料</a></li>
-                        <li><a href="manageCourses.jsp">教学课程</a></li> 
-                        <li><a href="manageGrade.jsp">成绩管理</a></li> 
-                        <li><a href="messagetShow.jsp">师生交流</a></li> 
-                    </ul> 
-               </div>
-            </div>
-            <div class="centerDiv">
-                   <div class="contentDiv">
-                    <div class=" container">
-                        <h3 class="text-danger text-center"  style="margin-bottom: 15px">查看视频</h3>
-                       <!--  <hr/> -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>查看视频资料</title>
+<base href="<%=basePath%>"></base>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/teacher.css" rel="stylesheet" type="text/css" />
+<link href="css/template.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+
+</head>
+<body>
+<%@include  file="teachertemplate.jsp"%>
+	<div style="margin-top: -570px;">
+
+		<div class="main-panel">
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-minimize">
+					<button id="minimizeSidebar"
+						class="btn btn-warning btn-fill btn-round btn-icon">
+						<i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i> <i
+							class="fa fa-navicon visible-on-sidebar-mini"></i>
+					</button>
+				</div>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">教务系统</a>
+				</div>
+			</div>
+			</nav>
+
+			<div class="content">
+				<div class="contentDiv">
+<!--                     <div class=" container"> -->
                         <table class="table table-striped table-hover dataTable">
-						<tr bgcolor="#E7E7E7">
-							<td height="14" colspan="7" background="/czjf_system/img/tbg.gif">&nbsp;</td>
-						</tr>
 						<tr align="center" bgcolor="#FAFAF1" height="22">
 							<td width="4%">序号</td>
 							<td width="25%">标题</td>
@@ -121,29 +113,11 @@
                               <input type="submit" value="上传视频" class="btn btn-small btn-danger">
                            </form>
             </div>
-                    </div>                  
-                    <br/>
-                  <br/>
-                </div>  
-            </div>
-        </div>
-        <div class="bottomDiv">Copyright © 2018 All rights reserved. Doublezl 版权所有</div>
-    </body>  
-<script>
-function delVedio(vId){
-	//做删除视频之前的确认提示
-	if(confirm("确认删除当前的视频吗?")){
-		//向服务端发起请求，将当前正在删除的视频的编号发送到服务端
-		location.href="${pageContext.request.contextPath}/vedio/deleteVedioByTeacher?id="+vId;
-	}
-}
-
-function logout(){
-	//用户确认提示
-	if(confirm("确定要退出吗?")){
-		location.href="${pageContext.request.contextPath}/teacher/logout";
-	}
-}
-</script>
-
+<!--                     </div> -->
+                 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
