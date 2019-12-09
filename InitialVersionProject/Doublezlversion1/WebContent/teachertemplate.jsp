@@ -18,11 +18,6 @@
     <div class="sidebar" data-color="orange" data-image="student/assets/img/full-screen-image-3.jpg">
        
         <div class="logo">
-<!--             <a href="#" class="logo-text"> -->
-<!--                                        操作栏 -->
-                                       
-<!--             </a> -->
-            欢迎您
             <c:if test="${not empty teacher}">     
 			   <br/>
 				欢迎您：${teacher.teaName} &nbsp;&nbsp;
@@ -54,7 +49,7 @@
                     <div class="collapse" id="componentsExamples">
                         <ul class="nav">
                             <li><a href="personalInfo.jsp">基本信息</a></li>
-                            <li><a href="pages/changeStudentPwd.jsp">修改密码</a></li>
+                            <li><a href="updatePass.jsp">修改密码</a></li>
                         </ul>
                     </div>
                 </li>
@@ -67,7 +62,9 @@
                     </a>
                     <div class="collapse" id="formsExamples">
                         <ul class="nav">
-                            <li><a href="studentAction_findNowCourse">教学课程</a></li>
+                            <li><a href="manageCourses.jsp">教学课程</a></li>
+                            <li><a href="vedioAdd.jsp">查看视频</a></li>
+                            <li><a href="vedioDetailAdd.jsp">上传视频</a></li>
                         </ul>
                     </div>
                 </li>
@@ -85,17 +82,32 @@
                         </ul>
                     </div>
                 </li>
-
+<!--                 <li class="active"> -->
+<!--                     <a data-toggle="collapse" href="#tablesExamples"> -->
+<!--                         <i class="pe-7s-news-paper"></i> -->
+<!--                         <p>师生交流 -->
+<!--                            <b class="caret"></b> -->
+<!--                         </p> -->
+<!--                     </a> -->
+<!--                     <div class="collapse" id="tablesExamples"> -->
+<!--                         <ul class="nav"> -->
+<!--                             <li><a href="messagetShow.jsp">查看留言</a></li> -->
+<!--                             <li><a href="messagetReplay.jsp">回复留言</a></li> -->
+<!--                         </ul> -->
+<!--                     </div> -->
+<!--                 </li> -->
+                
                 <li class="active">
                     <a data-toggle="collapse" href="#mapsExamples">
                         <i class="pe-7s-map-marker"></i>
-                        <p>教学资料
+                        <p>师生交流
                            <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse" id="mapsExamples">
                         <ul class="nav">
-                            <li><a href="studentAction_findMyGrade?type=1">视频管理</a></li>
+                            <li><a href="messagetShow.jsp">查看留言</a></li> 
+                            <li><a href="messagetReplay.jsp">回复留言</a></li>
                         </ul>
                     </div>
                 </li>
