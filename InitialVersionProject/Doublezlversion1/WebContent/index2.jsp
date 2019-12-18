@@ -129,7 +129,12 @@
                                         <label>密码</label> <span id="teaPassError" style="color:red"></span>
                                         <input type="teaPass" name="teaPass" id="teaPass" placeholder="teaPass" class="form-control">
                                   
-                                    </div>                                    
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                         <a href="findpassword.jsp">忘记密码？<a/>
+                                  
+                                    </div>                                   
                                  
                                 </div>
                                 <div class="footer text-center">
