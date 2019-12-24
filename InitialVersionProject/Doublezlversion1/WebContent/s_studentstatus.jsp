@@ -1,77 +1,53 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@page import="com.niit.entity.Teacher"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://"
             + request.getServerName() + ":" + request.getServerPort()
             + path + "/";
-%> 
+%>
 <html>
-    <head>
-        <title>学籍信息</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <base href="<%=basePath%>"></base>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/template.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-        <script language="javascript">
-            function check()
-            {
-                 if(document.formPw.teaPass.value =="")
-                 {
-                     alert("新密码不能空");
-                     return ;
-                 }
-                 document.getElementById("fm").submit();
-            }
-        </script>
-        <style type="text/css">
-           .btnn{
-               border:0px;
-               background-color:transparent;
-               color:#fff
-               
-           }
-        </style>
-    </head>
-    <body>
-        <div class="topDiv" style=" background:url(images/1002.jpg) ">
-            <div id="navigation">
-	            <div class="welcome">
-	                <c:if test="${not empty student}">     
-					    <br/>
-					             欢迎您：${student.stuName} &nbsp;&nbsp;
-					    <a href="javascript:void(0)" onclick="logout()">安全退出</a> 
-					    <br/><br/><br/>
-	 				</c:if>
-            </div>
-            </div>
-        </div>
-        <div class="middleDiv" >
-            <div class="leftDiv" style=" background:url(images/1001.jpg)">
-               <div>
-                  <div>
-                  <ul class="navMenu">     
-		                <li><a href="s_studentstatus.jsp">学籍信息</a></li>
-		                <li><a href="s_updatepassword.jsp">修改密码</a></li>
-		                <li><a href="s_chengjichaxun.jsp">个人成绩查询</a></li>
-		                <li><a href="s_findTeacher.jsp">教师查询</a></li>
-		                <form action="demo05">
-		                   <input type="submit" value="学生选课" style="border:0px; background-color:transparent; color:#fff">
-		                </form>
-		                <li><a href="s_kebiaochaxun.jsp">查看课表</a></li>
-		                <li><a href="s_showVedio.jsp">学生教学资料</a></li>
-	                   <li><a href="s_messagesShow.jsp">学生留言展示</a></li> 
-                   </ul> 
-               </div>
-               </div>
-            </div>
-            <div class="centerDiv">
-                    <div class=" container">
-                        <h3 class="text-danger text-center"
-				style="color: red; text-align: center">学籍信息</h3>
-			<hr />
-                        <form
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>成绩管理</title>
+<base href="<%=basePath%>"></base>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/teacher.css" rel="stylesheet" type="text/css" />
+<link href="css/template.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+
+</head>
+<body>
+<%@include  file="studenttemplate.jsp"%>
+	<div style="margin-top: -570px;">
+
+		<div class="main-panel">
+			<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-minimize">
+					<button id="minimizeSidebar"
+						class="btn btn-warning btn-fill btn-round btn-icon">
+						<i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i> <i
+							class="fa fa-navicon visible-on-sidebar-mini"></i>
+					</button>
+				</div>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">教务系统</a>
+				</div>
+			</div>
+			</nav>
+
+			<div class="content">
+				<div class="contentDiv">
+                     <form
 								action="${pageContext.request.contextPath}/student/studentstatus"
 								style="background-color: #cccccc">
 								<table class="table table-striped dataTable">
@@ -152,15 +128,14 @@
 											value="0" />未知</td>
 									</tr>
 								</table>
-							</form>      
-                    <br/>
-                    <br/>
-                </div>
-            </div>
-        </div>
-        <div class="bottomDiv">Copyright © 2018 All rights reserved. Doublezl 版权所有</div>
-    </body>  
-     <script>
+							</form> 
+                  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+   <script>
     function logout(){
     	if(confirm("确定要退出吗?")){
     		location.href="${pageContext.request.contextPath}/student/logout";
