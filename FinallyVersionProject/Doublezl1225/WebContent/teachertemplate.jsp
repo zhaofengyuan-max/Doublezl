@@ -27,9 +27,9 @@
         </div>
   	<div class="sidebar-wrapper">
               <div class="user">
-<!--                 <div class="photo"> -->
-<%--                     <img src="images/${teacher.teaNo}.jpg" style="width:78px;height:73px"/> --%>
-<!--                 </div> -->
+<div id="allmap"></div>
+<div class="location" onclick="clickLoaction(this)">获取地理位置</div>
+                <div class="info">
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
                                                            Doublezl
@@ -121,6 +121,44 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/jquery-ui.min.js" type="text/javascript"></script> 
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=PnkgkjYr5fVyKhQfjyTpv6kkc1YOvHBH"></script>
+<script>
+var local="kkk";
+console.log(local);
+var map = new BMap.Map("allmap");//创建Map实例，注意页面中一定要有个id为allmp的div
+var point = new BMap.Point(116.331398,39.897445);//创建定坐标
+map.centerAndZoom(point,12);// 初始化地图,设置中心点坐标和地图级别
+
+var geolocation = new BMap.Geolocation();//获取经纬度
+geolocation.getCurrentPosition(function(r){
+    if(this.getStatus() == BMAP_STATUS_SUCCESS){
+        var mk = new BMap.Marker(r.point);
+        map.addOverlay(mk); 
+        map.panTo(r.point);
+        
+        console.log('您的位置：'+r.point.lng+','+r.point.lat);
+        console.log(this)
+        
+        var gc = new BMap.Geocoder();//地址解析
+        var pointAdd = new BMap.Point(r.point.lng, r.point.lat);
+        gc.getLocation(pointAdd, function(rs){
+        	local=rs
+        	
+           console.log(rs)
+        })
+    }
+    else {
+        alert('获取地理位置失败'+this.getStatus());
+    }        
+}); 
+
+function clickLoaction(obj){
+	console.log(local)
+	obj.innerHTML=local.address
+}
+
+</script>
 	    <script>
     function logout(){
     	if(confirm("确定要退出吗?")){
