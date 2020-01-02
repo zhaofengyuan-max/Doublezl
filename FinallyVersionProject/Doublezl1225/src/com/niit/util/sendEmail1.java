@@ -67,7 +67,7 @@ public MimeMessage createSimpleMail(Session session, String mailfrom, String mai
 		// 邮件的文本内容
 		message.setContent(mailText, "text/html;charset=UTF-8");
 		// 返回创建好的邮件对象
-		return message;
+		return message;  
 }
 
 }
