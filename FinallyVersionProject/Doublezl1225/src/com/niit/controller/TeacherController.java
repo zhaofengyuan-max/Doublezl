@@ -184,7 +184,7 @@ public class TeacherController {
 	            + path + "/";
 		response.sendRedirect(basePath+"index2.jsp");
 		return null;
-	}
+	}  
 	
 	//鎵归噺褰曞叆鎴愮哗椤甸潰
 	@RequestMapping(value="/inputGrade")   
