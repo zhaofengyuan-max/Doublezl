@@ -3,7 +3,7 @@ package com.niit.controller;
 import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;  
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +35,7 @@ public class AdminController {
 		return mv1;
 	}else{
 		ModelAndView mv2 = new ModelAndView("adminlogin");
-	     mv2.addObject("stalogin", "用户名或密码错误！");
+	     mv2.addObject("stalogin", "鐢ㄦ埛鍚嶆垨瀵嗙爜閿欒锛�");
 		return mv2;
 	}
 	
