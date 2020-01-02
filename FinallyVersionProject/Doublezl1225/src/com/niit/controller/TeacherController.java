@@ -115,7 +115,7 @@ public class TeacherController {
 	
 	
 	
-	//澧炴坊鏁版嵁鐨勬祴璇�
+	//婢х偞鍧婇弫鐗堝祦閻ㄥ嫭绁寸拠锟�
 //	@RequestMapping(value="/login")   
 //	public String login(@RequestParam(value="teaNo") String teaNo,
 //			            @RequestParam(value="teaName") String teaName,
@@ -155,28 +155,23 @@ public class TeacherController {
 	@RequestMapping(value ="/find")
 	public String find(@RequestParam(value = "teaNo") String teaNo, 
 			           @RequestParam(value = "qq") String qq, 
-						HttpSession session) {
+					HttpSession session) throws Exception {
 		System.out.println(teaNo + "--"+qq );
 		int r=0;
 		String message="";
 		t=teacherBiz1.getTeacherById(teaNo);
 		String pass=t.getTeaPass();
-//		System.out.println();
 		if(null!=t) {
 			Random random=new Random();
 			r=random.nextInt(8999)+1000;//生成四位验证码
-			sendEmail send=new sendEmail(teaNo,qq,r,pass);
-			send.Email();
-			message="验证码已经发送到你的邮箱，请注意 查看!";
-//			password=rs.getString("密码");
-			System.out.println("随机数为："+r+"密码为:"+pass);
+			sendEmail1 send1=new sendEmail1();
+			String mailText = "验证码已经发送到你的邮箱，请注意 查看!"+"验证码为:"+r+"密码为:"+pass;
+			String mailTitle="您的验证码为:";
+			Boolean yesno=send1.SendEmail(qq, mailTitle, mailText);
+			System.out.println(yesno);
 			
 		}
-//		HttpSession session=req.getSession();
-//		session.setAttribute("id", id);
-//		session.setAttribute("password", password);
 		session.setAttribute("random", r);
-		session.setAttribute("message", message);
 		return "checkrandom";
 	}
 	
@@ -191,7 +186,7 @@ public class TeacherController {
 		return null;
 	}
 	
-	//批量录入成绩页面
+	//鎵归噺褰曞叆鎴愮哗椤甸潰
 	@RequestMapping(value="/inputGrade")   
 	public String inputGrade(HttpServletRequest request,HttpServletResponse response,HttpSession session) throws IOException{
 	 	String path = request.getContextPath();
