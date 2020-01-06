@@ -11,4 +11,4 @@ public interface ITeacherBiz1 {
 	void updateInfo(Teacher t);
 	List<Object[]> selectAllCourses(String teacherNo);
 }
-  
+     
